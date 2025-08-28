@@ -268,7 +268,7 @@
     .menu-type{
         padding: 6rem 0rem;
     }
-    .menu-type:nth-of-type(even){
+    .menu-type:nth-of-type(odd){
         background: #1F2120;
     }
     .menu-type .prod-items{
@@ -405,6 +405,29 @@
     .discount-message{
         font-size: 14px !important;
         font-style: italic;
+    }
+    .menu-heading{
+        padding: 6rem 0rem;
+        color: #fff;
+    }
+    .menu-heading p{
+        max-width: 800px;
+        margin: auto;
+    }
+    .menu-heading h1{
+        margin: 2ren 0rem;
+    }
+    .menu-cat{
+        margin-top: 3rem;
+    }
+    .menu-cat .col-md-2:hover{
+        cursor: pointer;
+    }
+    .menu-cat .col-md-2:hover img{
+        filter: blur(2px);
+    }
+    .menu-cat .col-md-2:hover h3{
+        color: var(--primary-color);
     }
     @media (max-width:767px) {
         .navbar-brand img{
