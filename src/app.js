@@ -57,7 +57,7 @@ function App() {
   return (
     
     <Router>
-      <PageWrapper/>
+      <PageWrapper>
       <ScrollToTop/>
       <Navbar />
       <Routes>
@@ -70,6 +70,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      </PageWrapper>
     </Router>
     
   );
