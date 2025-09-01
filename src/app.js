@@ -18,28 +18,16 @@ const Contact = lazy(() => import("./pages/Contact"));
 function PageWrapper({ children }) {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
-  const [firstLoad, setFirstLoad] = useState(true);
 
-  useEffect(() => {
-    if (firstLoad) {
-      const handleLoad = () => {
-        setTimeout(() => {
-          setLoading(false);
-          setFirstLoad(false);
-        }, 2000); 
-      };
-      window.addEventListener("load", handleLoad);
+ useEffect(() => {
+    setLoading(true);
 
-      return () => window.removeEventListener("load", handleLoad);
-    } else {
-      setLoading(true);
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 2000);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
 
-      return () => clearTimeout(timer);
-    }
-  }, [location, firstLoad]);
+    return () => clearTimeout(timer);
+  }, [location]);
 
   return <>{loading ? <Preloader /> : children}</>;
 }
