@@ -23,6 +23,11 @@
         align-content: center;
         justify-content: center;
         text-align: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: #000;
+        z-index: 9999;
     }
     .loader img{
         width: 150px;
@@ -429,6 +434,9 @@
     }
     .menu-cat{
         margin-top: 3rem;
+    }
+    .menu-cat img{
+        width: 100%;
     }
     .menu-cat .col-md-2:hover{
         cursor: pointer;

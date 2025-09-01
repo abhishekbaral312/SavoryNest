@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import { lazy, useEffect} from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { lazy, useEffect, useState } from "react";
 import ScrollToTop from "./scrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,6 +15,34 @@ const Checkout = lazy(() => import("./pages/Checkout"));
 const ThankYou = lazy(() => import("./pages/Thankyou"));
 const Contact = lazy(() => import("./pages/Contact"));
 
+function PageWrapper({ children }) {
+  const location = useLocation();
+  const [loading, setLoading] = useState(true);
+  const [firstLoad, setFirstLoad] = useState(true);
+
+  useEffect(() => {
+    if (firstLoad) {
+      const handleLoad = () => {
+        setTimeout(() => {
+          setLoading(false);
+          setFirstLoad(false);
+        }, 2000); 
+      };
+      window.addEventListener("load", handleLoad);
+
+      return () => window.removeEventListener("load", handleLoad);
+    } else {
+      setLoading(true);
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location, firstLoad]);
+
+  return <>{loading ? <Preloader /> : children}</>;
+}
 
 function App() {
 
@@ -28,6 +57,7 @@ function App() {
   return (
     
     <Router>
+      <PageWrapper/>
       <ScrollToTop/>
       <Navbar />
       <Routes>

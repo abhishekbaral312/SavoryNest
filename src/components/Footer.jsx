@@ -7,11 +7,11 @@ function Footer() {
         <div className="row text-white">
           <div className="col-md-4 mb-3">
             <Link className="d-flex align-items-center text-decoration-none" to="/">
-              <img src="./images/logo.png" alt="Logo" width={80}/>
+              <img src="/images/logo.png" alt="Logo" width={80}/>
               <span className="logo-name">SavoryNest</span>
             </Link>
             <p className="my-4">At SavoryNest, we serve more than just meals — we create memorable dining moments. Join us for a flavorful experience crafted with passion and care.</p>
-            <img src="./images/cards.png" alt="card" width={200} />
+            <img src="/images/cards.png" alt="card" width={200} />
           </div>
 
           <div className="col-md-4 mb-3">

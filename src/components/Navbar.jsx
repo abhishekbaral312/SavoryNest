@@ -5,7 +5,7 @@ function NavbarComponent() {
    <nav className="navbar navbar-expand-lg navbar-dark">
   <div className="container d-flex justify-content-between align-items-center">
     <Link className="navbar-brand d-flex align-items-center" to="/">
-      <img src="./images/logo.png" alt="Logo"/>
+      <img src="/images/logo.png" alt="Logo"/>
       <span className="logo-name">SavoryNest</span>
     </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
